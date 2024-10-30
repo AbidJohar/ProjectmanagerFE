@@ -1,86 +1,39 @@
-// import React from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { Button, makeStyles } from '@mui/material';
-// import Helmet from '../Helmet';
+import { Link } from "react-router-dom";
+// import { useSelector } from 'react-redux';
+import { Button } from "@mui/material";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    margin: '25vh auto 0 auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    fontSize: '3.5em',
-    padding: 10,
-    textAlign: 'center',
-    '& h1,h2,h6': {
-      margin: 0,
-    },
-    '& h6': {
-      color: '#a4a4a4',
-      fontWeight: 100,
-      fontSize: '1.2rem',
-    },
-    '& h1,h2': {
-      color: '#fff',
-      [theme.breakpoints.down('xs')]: {
-        fontSize: '1.2em',
-      },
-    },
-    '& p': {
-      fontSize: '.875rem',
-      color: '#fff',
-      '& a': {
-        color: '#02b6ce',
-      },
-    },
-  },
-}));
-
-const Home = () => {
-  const classes = useStyles();
-  const { userInfo } = useSelector((state) => state.userLogin);
+const HomePage = () => {
+  //   const { userInfo } = useSelector((state) => state.userLogin);
+  const userInfo = null;
 
   return (
-    <div className={classes.container}>
-      {/* <Helmet title={userInfo ? 'Welcome Back!' : 'Welcome!'} /> */}
-      {userInfo ? (
-        <>
-          <h2>Welcome back!</h2>
-          <h6 style={{ maxWidth: 500 }}>
-            There is no time to waste, get back to your projects!
-          </h6>
-          <Link
-            to='/boards'
-            style={{ textDecoration: 'none', marginTop: '10px', fontSize: 0 }}
-          >
-            <Button color='primary' variant='outlined' size='large'>
-              Boards
-            </Button>
-          </Link>
-        </>
-      ) : (
-        <>
-          <h1 className='text-black'>Welcome!</h1>
-          <h6 style={{ maxWidth: 500 }}>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+        <div className="flex flex-col items-center text-center text-4xl p-4">
+          <h1 className="text-4xl font-semibold text-teal-600">Welcome!</h1>
+          <h6 className="text-gray-400 font-light text-lg max-w-xl">
             Project Manager is an app that helps you with productivity and
             maintaining order in your project
           </h6>
-          <Link
-            to='/register'
-            style={{ textDecoration: 'none', marginTop: '10px', fontSize: 0 }}
-          >
-            <Button color='primary' variant='outlined' size='large'>
+          <Link to="/register" className="mt-2">
+            <Button
+              className="text-teal-600 border-teal-600 hover:bg-teal-600 hover:text-white"
+              variant="outlined"
+              size="large"
+            >
               Get Started
             </Button>
           </Link>
-          <p className={classes.paragraph}>
-            Already a user? <Link to='/signin'>Sign in</Link>
-          </p>
-        </>
-      )}
+          {/* <p className="text-white text-sm">
+            Already a user?{" "}
+            <Link to="/register" className="text-teal-500">
+              Sign in
+            </Link>
+          </p> */}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;

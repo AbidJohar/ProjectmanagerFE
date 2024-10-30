@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import HomePage from './HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import AuthForm from './pages/AuthForm.jsx';
@@ -13,7 +13,7 @@ const isAuthenticated = true;
  const router = createBrowserRouter([
  {
   path: "/",
-  element: <App/>,
+  element: <HomePage/>,
   errorElement: <NotFoundPage/>
  },
  {
