@@ -1,11 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import HomePage from './HomePage.jsx'
+import HomePage from './pages/HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import AuthForm from './pages/AuthForm.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
+import Dashboard from './pages/Dashboard.jsx'
 
 //  const isAuthenticated = localStorage.getItem('token');
 const isAuthenticated = true;
@@ -27,7 +28,7 @@ const isAuthenticated = true;
   children: [
     {
       index: true,
-      // element: <Dashboard />,
+      element: <Dashboard />,
     },
   ],
   errorElement: <NotFoundPage />,
