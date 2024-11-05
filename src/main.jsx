@@ -7,6 +7,8 @@ import NotFoundPage from './pages/NotFoundPage.jsx';
 import AuthForm from './pages/AuthForm.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import Dashboard from './pages/Dashboard.jsx'
+import Projects from './pages/Projects.jsx';
+import DashboardContent from './dashboardcomponents/DashboardContent.jsx'
 
 //  const isAuthenticated = localStorage.getItem('token');
 const isAuthenticated = true;
@@ -24,14 +26,18 @@ const isAuthenticated = true;
  },
  {
   path: '/dashboard',
-  element: <ProtectedRoute isAuthenticated={isAuthenticated} />,
+  element: <ProtectedRoute isAuthenticated={isAuthenticated}><Dashboard /></ProtectedRoute>,
+  errorElement: <NotFoundPage />,
   children: [
     {
       index: true,
-      element: <Dashboard />,
+      element: <DashboardContent />
     },
-  ],
-  errorElement: <NotFoundPage />,
+    {
+      path: 'projects',
+      element: <Projects />
+    }
+  ]
 },
 
  ])

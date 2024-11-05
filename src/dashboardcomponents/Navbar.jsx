@@ -7,8 +7,7 @@ const Navbar = () => {
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   return (
-    <div className="w-full bg-teal-600
-     p-2 flex justify-between items-center relative">
+    <div className="w-full bg-blue-600  p-2 flex justify-between items-center  relative">
       <h1 className="text-white text-xl font-semibold">Project Manager Dashboard</h1>
 
       <div className="flex items-center space-x-4">
