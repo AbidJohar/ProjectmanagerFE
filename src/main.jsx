@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import HomePage from './pages/HomePage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import DashboardContent from './dashboardcomponents/DashboardContent';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import AuthForm from './pages/AuthForm.jsx';
 import ProtectedRoute from './pages/ProtectedRoute.jsx';
@@ -30,6 +31,10 @@ import Projects from './pages/Projects.jsx';
       path: 'dashboard',
       element: <Dashboard/>,
       children: [
+        {
+          path: "",
+          element: <DashboardContent />,  // DashboardContent (with the 3 cards)
+        },
         {
           path: "projects",
           element: <Projects />
